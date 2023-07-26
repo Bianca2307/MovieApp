@@ -62,7 +62,7 @@ public class OnBoardingActivity extends AppCompatActivity {
 
         String selectedActorsJson = sharedPreferences.getString("selectedActors", null);
             if(selectedActorsJson!=null){
-                Log.d("OnBoardingActivity", "Genres are not empty");
+                Log.d("OnBoardingActivity", "Actors are not empty");
                 actorsButton.setVisibility(View.GONE);
             }else {
                 actorsButton.setVisibility(View.VISIBLE); // Show the button if there are no saved genres

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,6 +45,7 @@ public class MoviesActivity extends AppCompatActivity {
 
     private EditText searchEditText;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +54,9 @@ public class MoviesActivity extends AppCompatActivity {
         searchEditText = findViewById(R.id.searchEditText);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        moviesAdapter = new MoviesAdapter();
+        moviesAdapter = new MoviesAdapter(this);
         recyclerView.setAdapter(moviesAdapter);
+
 
         moviesViewModel = new ViewModelProvider(this).get(MoviesViewModel.class);
 
